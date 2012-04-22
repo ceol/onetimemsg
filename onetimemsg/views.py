@@ -27,7 +27,7 @@ def submit():
         return redirect(url_for('index'))
     return render_template('submit.html', form=form)
 
-@app.route('/<regex("[a-zA-Z0-9]+"):uid>')
+@app.route('/<regex("[a-zA-Z0-9]{8}"):uid>')
 def message_detail(uid):
     message = Message.query.filter_by(uid=uid).first_or_404()
     db_session.delete(message)
