@@ -1,1 +1,12 @@
 {% extends "base.html" %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+        {% if category == 'message_created' %}
+            <div class="alert alert-success">
+                <strong>Here's your message:</strong> <input type="text" value="{{ url_for('message_detail', uid=message, _external=True) }}" class="well">
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endwith %}
+{% endblock %}

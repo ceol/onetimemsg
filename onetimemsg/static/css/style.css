@@ -1,0 +1,48 @@
+header {
+    margin-bottom: 20px;
+}
+
+header > p {
+    color: #bbb;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: right;
+}
+
+header > p > a {
+    color: #333;
+    float: left;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container > h1 {
+    margin-bottom: 20px;
+}
+
+input.well {
+    padding: 3px;
+    margin: 0;
+}
+
+.container > form {
+    text-align: center;
+}
+
+.container > form textarea {
+    width: 80%;
+    height: 200px;
+}
+
+.container > form p input.btn {
+    font-size: 18px;
+    line-height: 23px;
+}
+
+footer {
+    margin-top: 20px;
+}

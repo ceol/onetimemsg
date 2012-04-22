@@ -1,1 +1,12 @@
 {% extends "base.html" %}
+{% block content %}
+{% if form.errors %}
+    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+    {% for error in field_errors %}
+        <div class="alert alert-error">
+            <strong>{{ form[field_name].name }}</strong>: {{ error }}
+        </div>
+    {% endfor %}
+    {% endfor %}
+{% endif %}
+{% endblock %}

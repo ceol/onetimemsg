@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneTimeMsg</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <header class="row">
+        <p><a href="{{ url_for('index') }}">OneTimeMsg</a> self-destructing messages</p>
+    </header>
+    {% block content %}{% endblock %}
+    {% block form_ %}
+        <form method="post" action="{{ url_for('submit') }}">
+            {{ form.hidden_tag() }}
+            {{ form.message() }}
+            <p>limit 500 characters</p>
+            <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+        </form>
+    {% endblock %}
+    <footer class="row">
+        <p>©2012 Patrick Jacobs | <a href="https://github.com/ceol/onetimemsg">GitHub</a></p>
+    </footer>
+</div>
+</body>
+</html>
