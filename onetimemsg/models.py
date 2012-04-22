@@ -1,4 +1,5 @@
 from sqlalchemy import (
+    func,
     Column,
     Boolean,
     DateTime,
@@ -13,7 +14,7 @@ class Message(Base):
     __tablename__ = 'messages'
 
     id = Column(Integer, primary_key=True)
-    pub_date = Column(DateTime)
+    created_date = Column(DateTime, default=func.now())
     ip = Column(String)
 
     uid = Column(String, unique=True)
