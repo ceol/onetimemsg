@@ -11,6 +11,7 @@ class RegexConverter(BaseConverter):
         self.regex = items[0]
 app.url_map.converters['regex'] = RegexConverter
 
+# @see: http://flask.pocoo.org/docs/patterns/packages/#simple-packages
 import onetimemsg.views
 
 if __name__ == '__main__':
