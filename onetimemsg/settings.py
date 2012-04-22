@@ -12,7 +12,7 @@ _join = os.path.join
 here = _dirname(_abspath(__file__))
 
 # Name and port number of the server
-SERVER_NAME = 'onetimemsg.me'
+SERVER_NAME = None
 # Optional subdirectory where the app lives (e.g. '/app/')
 APPLICATION_ROOT = None
 
