@@ -16,5 +16,5 @@ class Message(Base):
     pub_date = Column(DateTime)
     ip = Column(String)
 
-    lookup = Column(String, unique=True)
+    uid = Column(String, unique=True)
     text = Column(Text)
