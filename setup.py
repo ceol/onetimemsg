@@ -14,7 +14,7 @@ requires = [
 ]
 
 setup(name='OneTimeMsg',
-      version='0.0',
+      version='0.1',
       description='A web app for sending self-destructing messages.',
       long_description=open(os.path.join(here, 'README.md')).read(),
       classifiers=[
