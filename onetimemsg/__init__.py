@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from werkzeug.routing import BaseConverter
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ class RegexConverter(BaseConverter):
 app.url_map.converters['regex'] = RegexConverter
 
 # @see: http://flask.pocoo.org/docs/patterns/packages/#simple-packages
-import onetimemsg.views
+from onetimemsg.views import *
 
 if __name__ == '__main__':
     app.run()
