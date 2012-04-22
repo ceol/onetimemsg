@@ -33,3 +33,7 @@ def message_detail(uid):
     db_session.delete(message)
     db_session.commit()
     return render_template('message_detail.html', message=message.text)
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
