@@ -7,4 +7,5 @@
 3. `cd onetimemsg`
 4. `python setup.py develop`
 5. `cp onetimemsg/default_settings.py onetimemsg/settings.py` and edit
-6. Serve with your favorite WSGI server
+6. `python manage.py initdb`
+7. Serve with your favorite WSGI server
