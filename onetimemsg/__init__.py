@@ -1,5 +1,4 @@
 from flask import Flask
-from werkzeug import import_string, cached_property
 from werkzeug.routing import BaseConverter
 
 app = Flask(__name__)
