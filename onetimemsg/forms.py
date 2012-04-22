@@ -1,4 +1,4 @@
-from flaskext.wtf import Form, TextField, Required
+from flaskext.wtf import Form, TextField, Required, Length
 
 class MessageForm(Form):
-    message = TextField('Message', validators=[Required()])
+    message = TextField('Message', validators=[Required(), Length(max=500)])
