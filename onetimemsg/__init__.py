@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import escape, Flask, Markup, render_template
 from werkzeug.routing import BaseConverter
+import markdown2
 
 app = Flask(__name__)
 app.config.from_object('onetimemsg.settings')
@@ -10,6 +11,10 @@ class RegexConverter(BaseConverter):
         super(RegexConverter, self).__init__(url_map)
         self.regex = items[0]
 app.url_map.converters['regex'] = RegexConverter
+
+@app.template_filter('markdown')
+def markdown(s):
+    return Markup(markdown2.markdown(escape(s)))
 
 # @see: http://flask.pocoo.org/docs/patterns/packages/#simple-packages
 from onetimemsg.views import *

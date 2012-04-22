@@ -9,6 +9,7 @@ requires = [
     'Flask',
     'Flask-Script',
     'Flask-WTF',
+    'markdown2',
     'SQLAlchemy',
 ]
 
