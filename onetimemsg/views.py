@@ -32,4 +32,4 @@ def message_detail(uid):
     message = Message.query.filter_by(uid=uid).first_or_404()
     db_session.delete(message)
     db_session.commit()
-    return render_template('message_detail.html', message=message)
+    return render_template('message_detail.html', message=message.text)
