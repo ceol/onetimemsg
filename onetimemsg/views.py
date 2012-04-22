@@ -15,7 +15,7 @@ def submit():
     form = MessageForm()
     if form.validate_on_submit():
         uid = uid_generator()
-        while Message.query.filter_by(uid=uid).first() is None:
+        while Message.query.filter_by(uid=uid).first() is not None:
             uid = uid_generator()
         message = Message(ip=request.remote_addr,
                           uid=uid,
